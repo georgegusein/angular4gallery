@@ -8,7 +8,7 @@
 
   <div *ngFor="let image of (visibleImages | imageFilter:filterBy)" class="col-md-4">
     <div class="thumbnail">
-      <a [routerLink]="['/image',image.id]" target="_blank">
+      <a [routerLink]="['/image',image._id]" target="_blank">
         <img src={{image.url}} alt="Lights" style="width:100%">
         <div class="caption">
           <p>{{image.caption}}</p>

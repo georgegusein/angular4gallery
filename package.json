@@ -1,0 +1,30 @@
+{
+  "name": "angular4gallery",
+  "version": "1.0.0",
+  "description": "angular 4 gallery",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgegusein/angular4gallery.git"
+  },
+  "keywords": [
+    "picture",
+    "api"
+  ],
+  "author": "George Gusein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgegusein/angular4gallery/issues"
+  },
+  "homepage": "https://github.com/georgegusein/angular4gallery#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongojs": "^2.4.1"
+  }
+}

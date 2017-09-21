@@ -8,13 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  image:any;
+  image:Object;
 
   constructor(private imageserviceService:ImageserviceService,
   private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.image = this.imageserviceService.getImage(+this.route.snapshot.params['id']);
+    let id = this.route.snapshot.params['id'];
+    this.imageserviceService.getImage(id).subscribe(data => {
+      this.image = data;
+    });
+   // this.image = this.imageserviceService.getImage(+this.route.snapshot.params['id']);
   }
 
 }

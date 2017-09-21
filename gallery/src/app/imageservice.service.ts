@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
+//http req
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ImageserviceService {
   visableImages = [];
-  constructor() { }
+  constructor(private http:Http) { }
 
   //service functions
   //get all images
   getImages(){
-    return this.visableImages = IMAGES.slice(0);
+    return this.http.get('http://localhost:3000/api/pictures').map(res => res.json());
+    //return this.visableImages = IMAGES.slice(0);
   }
 
   getImage(id:number){
-    return IMAGES.slice(0).find(image => image.id == id);
+    return this.http.get('http://localhost:3000/api/picture/'+id).map(res => res.json());
+   // return IMAGES.slice(0).find(image => image.id == id);
   }
 }
 

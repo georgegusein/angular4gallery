@@ -19,6 +19,8 @@ import {ImageFilterPipe} from './filter.pipe';
 import { RouterModule } from '@angular/router'
 import { appRoutes } from './routes';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

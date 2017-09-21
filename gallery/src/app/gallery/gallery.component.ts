@@ -7,15 +7,22 @@ import {ImageserviceService} from '../imageservice.service';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit, OnChanges {
-visibleImages: any[] = [];
+categories:any[];
+visibleImages: Object;
 @Input() filterBy?: string = 'all';
   constructor(private imageserviceService:ImageserviceService) { }
 
   ngOnInit() {
-    this.visibleImages = this.imageserviceService.getImages();
+    var i:number;
+    this.imageserviceService.getImages().subscribe(data => {
+
+      this.visibleImages = data;
+    });
   }
   ngOnChanges() {
-    this.visibleImages = this.imageserviceService.getImages();
+    this.imageserviceService.getImages().subscribe(data => {
+      this.visibleImages = data;
+    });
   }
 
 }
