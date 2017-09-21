@@ -1,0 +1,21 @@
+
+<div class="row">
+  <button class="btn btn-info" [class.active]="filterBy=='all'" (click)="filterBy='all'">All</button>
+  <button *ngFor="let category of visibleImages" class="btn btn-info" [class.active]="filterBy==category.category" (click)="filterBy=category.category"> {{category.category}} </button>
+</div>
+<br/>
+<div class="row">
+
+  <div *ngFor="let image of (visibleImages | imageFilter:filterBy)" class="col-md-4">
+    <div class="thumbnail">
+      <a [routerLink]="['/image',image.id]" target="_blank">
+        <img src={{image.url}} alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>{{image.caption}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+</div>
